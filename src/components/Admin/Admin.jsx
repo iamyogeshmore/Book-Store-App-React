@@ -25,8 +25,6 @@ const Admin = () => {
     bookDescription: bookDescription
   }
 
-  
-
   const handleSubmit = (e) => {
     e.preventDefault();
       console.log(BookData);
@@ -41,10 +39,6 @@ const Admin = () => {
         toast.error(error.response.data);
         console.log(error) }) 
   };
-
-
-
-
 
   return (
     <div>

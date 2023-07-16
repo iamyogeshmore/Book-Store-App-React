@@ -140,7 +140,7 @@ const Home = () => {
                     </CardActions>
                   </Card>
                 )
-              }): "No Books Avaikable Here"
+              }): "No Books Available Here"
             }
           </div>
           <div className='pagination'>

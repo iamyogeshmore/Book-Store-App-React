@@ -31,7 +31,6 @@ const Pagination = ({showPerPages, onPagination, totalPage }) => {
      }
    }
  
- 
    return (
    <>
    <div className='d-flex justify-content-between'>

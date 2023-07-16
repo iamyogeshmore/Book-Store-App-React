@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-flow:wrap;
-    background-color: #7f2b31;
+    background-color: darkred;
     color: white;
     padding-top: 1%;
     font-size: 22px;
@@ -107,3 +107,41 @@ text {
     color: white;
     font-style: inherit;
 }
+
+  .logOutbutton,
+  .orderbutton {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: darkred;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signUpbutton:hover,
+  .loginbutton:hover,
+  .logOutbutton:hover,
+  .orderbutton:hover {
+    background-color: #f22000;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  

@@ -1,77 +1,114 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios';
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { IconButton } from '@mui/material';
-import './Header.css';
-import { toast } from 'react-toastify';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { IconButton } from "@mui/material";
+import "./Header.css";
+import { toast } from "react-toastify";
 
 const Header = (props) => {
-
     let navigate = useNavigate();
-    
-    
-
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
 
     const logOutHandler = () => {
         console.log(localStorage.getItem("Token"));
-        axios.post(`http://localhost:8083/UserPage/Logout?token=${localStorage.getItem("Token")}`)
-        .then((res) => {
-            toast.success(res.data.message);
-            localStorage.clear()
-            setTimeout(() => { navigate("/"); }, 2000);
-        })
-        .catch((error) => {
-            toast.error(error.response.data);
-            console.log(error);
-          });
-    }
+        axios
+            .post(
+                `http://localhost:8083/UserPage/Logout?token=${localStorage.getItem("Token")}`
+            )
+            .then((res) => {
+                toast.success(res.data.message);
+                localStorage.clear();
+                setTimeout(() => {
+                    navigate("/");
+                }, 2000);
+            })
+            .catch((error) => {
+                toast.error(error.response.data);
+                console.log(error);
+            });
+    };
 
-    
+    return (
+        <div>
+            <header>
+                <div className="project">
+                    <AutoStoriesIcon
+                        color="action"
+                        fontSize="large"
+                        className="projecticon"
+                    />
+                    <label
+                        className="projectname"
+                        onClick={() => {
+                            navigate("/");
+                        }}
+                    >
+                        BookStore
+                    </label>
 
-    
-    
+                    {localStorage.getItem("Token") === null && (
+                        <button
+                            onClick={() => {
+                                navigate("/Signup");
+                            }}
+                            className="signUpbutton"
+                        >
+                            REGISTER
+                        </button>
+                    )}
 
+                    {localStorage.getItem("Token") === null && (
+                        <button
+                            onClick={() => {
+                                navigate("/Login");
+                            }}
+                            className="loginbutton"
+                        >
+                            Login
+                        </button>
+                    )}
 
-  return (
-    <div>
-        <header>
-        <div className="project">
-            <AutoStoriesIcon color="action" fontSize='large' className="projecticon" />
-                <label className="projectname" onClick = {() => { navigate("/")}}>BookStore</label>
-            
+                    {localStorage.getItem("Token") != null && (
+                        <button onClick={logOutHandler} className="logOutbutton">
+                            Logout
+                        </button>
+                    )}
 
-            {localStorage.getItem("Token") === null &&
-                <button onClick = {() => { navigate("/Signup") }} className="signUpbutton">REGISTER</button>
-            }
+                    {localStorage.getItem("Token") != null && (
+                        <button
+                            onClick={() => {
+                                navigate("/Orders");
+                            }}
+                            className="orderbutton"
+                        >
+                            Orders
+                        </button>
+                    )}
 
-            {localStorage.getItem("Token") === null &&
-                <button onClick = {() => { navigate("/Login") }} className="loginbutton">Login</button>
-            }
-
-            {localStorage.getItem("Token") != null &&
-                <button onClick = {logOutHandler} className="logOutbutton">Logout</button>
-            }
-
-            {localStorage.getItem("Token") != null &&
-                <button onClick = {() => { navigate("/Orders") }} className="orderbutton">Orders</button>
-            }
-            
-            {localStorage.getItem("Token") != null &&
-                <div className="projectcart">
-                <IconButton onClick = {() => { navigate("/Cart")}} aria-label="cart">
-                    <text>Cart</text>
-                        <ShoppingCartIcon />
-                </IconButton>
-            </div>
-            }
-            
-            
+                    {localStorage.getItem("Token") != null && (
+                        <div className="projectcart">
+                            <IconButton
+                                onClick={() => {
+                                    navigate("/Cart");
+                                }}
+                                aria-label="cart"
+                            >
+                                <text>Cart</text>
+                                <ShoppingCartIcon />
+                            </IconButton>
+                        </div>
+                    )}
+                </div>
+            </header>
+            <footer className="footer">
+                <p>All rights reserved by Bookstore Information Service Pvt Ltd.</p>
+                <p>Powered by: Prints Publications Pvt Ltd | &copy; {year} — <strong>Boookstore</strong></p>
+            </footer>
         </div>
-        </header>
-    </div>
-  )
-}
+    );
+};
 
-export default Header
+export default Header;
