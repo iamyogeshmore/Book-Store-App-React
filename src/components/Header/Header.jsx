@@ -9,8 +9,6 @@ import { toast } from "react-toastify";
 
 const Header = (props) => {
     let navigate = useNavigate();
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
 
     const logOutHandler = () => {
         console.log(localStorage.getItem("Token"));
@@ -103,10 +101,6 @@ const Header = (props) => {
                     )}
                 </div>
             </header>
-            <footer className="footer">
-                <p>All rights reserved by Bookstore Information Service Pvt Ltd.</p>
-                <p>Powered by: Prints Publications Pvt Ltd | &copy; {year} — <strong>Boookstore</strong></p>
-            </footer>
         </div>
     );
 };

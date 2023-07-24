@@ -18,7 +18,6 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PlacedSuccessfull from '../../pages/Order/PlacedSuccessfull';
 
-
 const PlaceOrder = () => {
     let navigate = useNavigate();
 
@@ -28,8 +27,6 @@ const PlaceOrder = () => {
     const [totalCartAmount, setTotalCartAmount] = useState(0);
     const [totalCartQty, setTotalCartQty] = useState(0);
 
-
-    
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
@@ -39,7 +36,6 @@ const PlaceOrder = () => {
     const [city, setCity] = useState("");
     const [landMark, setLandMark] = useState("");
     const [addressType, setAddressType] = useState("");
-
 
     let shippingAddress = {
         firstName: userData.firstName,
@@ -52,7 +48,6 @@ const PlaceOrder = () => {
         landMark: userData.landMark,
         addressType: userData.addressType,
     }
-
 
     useEffect(() => {
       document.title = 'Place Order';

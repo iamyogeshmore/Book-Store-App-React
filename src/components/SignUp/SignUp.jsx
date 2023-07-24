@@ -8,6 +8,10 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import './SignUp.css';
+
 
 const SignUp = () => {
     const [firstName, setFirstName] = useState("");
@@ -47,24 +51,27 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post("http://localhost:8083/UserPage/Register_New_User", user)
-           .then((responce) => { toast.success(responce.data.message);
-            setTimeout(() => { navigate("/Login"); }, 3000);
-            })
-            .catch((error) => { toast.error(error.response.data); })
+           .then((response) => { 
+               toast.success(response.data.message);
+               setTimeout(() => { navigate("/Login"); }, 3000);
+           })
+           .catch((error) => { toast.error(error.response.data); })
     };
 
   return (
-    <Container component= "main" maxWidth="md">
+    <div>
+      <Header /><Footer />   
+      <Container component="main" maxWidth="md"> 
         <CssBaseline/>
         <Box
-            sx={{
-                marginTop: 4,
-                display:"flex",
-                flexDirection:"column",
-                alignItems:"center"
-
-            }}
-        >
+    className="formContainer"
+    sx={{
+        marginTop: 4,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+    }}
+>
             <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
                 <AccountCircleIcon />
             </Avatar>
@@ -227,8 +234,13 @@ const SignUp = () => {
             </Box>
             <ToastContainer autoClose={2000} />
         </Box>
-    </Container>
+        
+      </Container>
+    
+    </div>
+
   );
+
 }
 
-export default SignUp
+export default SignUp;

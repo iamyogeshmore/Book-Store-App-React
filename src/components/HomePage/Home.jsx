@@ -3,6 +3,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import './Home.css';
 import Pagination from '../pagination/Pagination';
 import { ShoppingCartRounded } from '@mui/icons-material';
@@ -83,7 +84,7 @@ const Home = () => {
 
   return (   
     <div>
-      <Header></Header>
+     <Header />
       <div className='searchSortBar'>
       <text className='bookText'>Books
       </text>
@@ -135,7 +136,7 @@ const Home = () => {
                     </CardContent>
 
                     <CardActions>
-                      <Button startIcon={<ShoppingCartRounded />} disabled={book.bookQuantity === 0} onClick={() => addToCart(book.bookId)} size="small" variant="contained">Add To Cart</Button>
+                      <Button startIcon={<ShoppingCartRounded />} disabled={book.bookQuantity === 0} onClick={() => addToCart(book.bookId)} size="small" variant="contained">Add</Button>
                       <Button variant="outlined" size="small">WishList</Button>
                     </CardActions>
                   </Card>
@@ -149,8 +150,11 @@ const Home = () => {
         </div>
       </div>
       <ToastContainer autoClose={2000} />
+      <Footer />
     </div>
+    
   )
+  
 }
 
 export default Home

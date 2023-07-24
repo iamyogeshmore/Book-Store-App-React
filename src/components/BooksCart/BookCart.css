@@ -1,88 +1,89 @@
 .cartContainer {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
 }
 
 .cartcontainerbody {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: right;
-    margin-top: 1px;
-    width: 70%;
-    height: 190px;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: right;
+  margin-top: 1px;
+  width: 70%;
+  height: 190px;
 }
 
 .cardContent {
-    text-align: left;
-    margin-left: 4%;
-    margin-top: 18px;
-
+  text-align: left;
+  margin-left: 4%;
+  margin-top: 18px;
 }
 
 .cardAction {
-    display: flex;
-    margin-left: auto;
-    margin-right: inherit;
+  display: flex;
+  margin-left: auto;
+  margin-right: inherit;
 }
 
 .countOfItems {
-    display: flex;
+  display: flex;
 }
 
 .countOfItems {
-    display: flex;
-    margin-top: 15px;
+  display: flex;
+  margin-top: 15px;
 }
 
 .countBox {
-    width: 5%;
-    padding: 5px 20px;
-    text-emphasis: none;
+  width: 5%;
+  padding: 5px 20px;
+  text-emphasis: none;
 }
 
 .count {
-    width: 25px;
-    text-align: center;
+  width: 25px;
+  text-align: center;
 }
-
 .emptyCartImg {
-    height: 50%;
-    width: 50%;
-    
-
+  height: 500px;
+  width: 500px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(175, 9, 9, 0.899);
+  margin-top: 80px;
+  margin-left: 500px;
 }
 
 .place-order {
-    width: 160px;
-    height: 60px;
-    border-radius: 10px;
-    background-color: #7f2b31;
-    position: relative;
-    overflow: hidden;
-    border: none;
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    margin-left: 57.5%;
+  width: 160px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #7f2b31;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 57.5%;
 }
-    
-    .text {
-      width: 100%;
-      height: 100%;
-      line-height: 60px;
-      opacity: 0;
-     
-      top: 0;
-      transition: all .2s;
-      transform: translateY(20px);
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
+
+.text {
+  width: 100%;
+  height: 100%;
+  line-height: 60px;
+  opacity: 0;
+
+  top: 0;
+  transition: all 0.2s;
+  transform: translateY(20px);
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
