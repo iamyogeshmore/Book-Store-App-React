@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table } from 'react-bootstrap';
-import orderPlacedImg from '../../assets/orderPlaced.PNG'
+import orderPlacedImg from '../../assets/orderPlace.png'
 import Header from '../../components/Header/Header'
 
 import './PlacedSuccessfull.css';

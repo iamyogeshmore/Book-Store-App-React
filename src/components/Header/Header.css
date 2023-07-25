@@ -1,16 +1,18 @@
-.project {
+  /* Main styles for the project cards and search bar */
+  .project {
     display: flex;
-    flex-wrap: wrap;
-    flex-flow:wrap;
-    background-color: darkred;
-    color: white;
+
+    background: linear-gradient(to bottom right, darkred, #8b0000);
     padding-top: 1%;
     font-size: 22px;
     font-weight: 500;
-}
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-out;
+    justify-content: flex-end; 
 
+  }
 
-#myInput {
+  #myInput {
     background-image: url('https://www.w3schools.com/css/searchicon.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
@@ -22,93 +24,44 @@
     border-radius: 12px;
   }
 
-.projecticon {
-    margin-left: 10%; 
-    margin-right: 1%; 
+  /* Project card icon styles */
+  .projecticon {
+    margin-left: 10%;
+    margin-right: 1%;
     margin-bottom: 1%;
-}
+    animation: rotate 1s linear infinite; /* Adding rotating animation */
+  }
 
-.projectname {
+  /* Project name styles */
+  .projectname {
     margin-right: 5%;
     cursor: pointer;
-}
-
-.projectcart {
-    margin-left: 0%;
-    margin-right: 7%;
-}
-.loginbutton {
-    background-color: transparent;
-    border: none;
     color: white;
-    padding: 8px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
+    transition: color 0.3s ease, transform 0.2s ease; /* Adding smooth transition */
+  }
 
-    margin-right: 6%;
-    height: min-content;
-}
-
-.signUpbutton {
-    background-color: transparent;
-    border: none;
-    color: white;
-    padding: 8px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-    margin-top: 1.3px;
-    margin-left: auto;
-    height: fit-content;
-}
-
-.logOutbutton{
-    background-color: transparent;
-    border: none;
-    color: white;
-    padding: 8px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-    margin-top: 1.3px;
-    margin-left: 53.1%;
-    height: fit-content;
-}
-
-.orderbutton{
-    background-color: transparent;
-    border: none;
-    color: white;
-    padding: 8px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-    margin-top: 1.3px;
-    margin-left: auto;
-    height: fit-content;
-}
-
-text {
-    font-size: 14px;
-    font-weight: 100;
-    color: white;
-    font-style: inherit;
-}
-
+  /* Login, Signup, Logout, and Order buttons styles */
+  .loginbutton,
+  .projectcart,
+  .signUpbutton,
   .logOutbutton,
+  .orderbutton {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-top: 1.3px;
+  }
+
+  /* Logout and Order buttons styles (overrides previous styles) */
+  .logOutbutton,
+  .projectcart,
   .orderbutton {
     margin-left: 10px;
     padding: 8px 16px;
@@ -119,29 +72,75 @@ text {
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    
   }
-  
-  .signUpbutton:hover,
+
+  /* Add spacing between buttons */
+  .loginbutton,
+  .projectcart,
+  .signUpbutton,
+  .logOutbutton,
+  .orderbutton {
+    margin-left: 10px;
+  }
+
+  /* Align all buttons to the right side */
+  .loginbutton,
+  .projectcart,
+  .signUpbutton,
+  .logOutbutton,
+  .orderbutton {
+    float: right;
+  }
+
+  /* Animation keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Hover styles */
+  .projectname:hover {
+    color: #ffcccb; /* Change text color on hover */
+    transform: scale(1.1); /* Enlarge the element on hover */
+  }
+
   .loginbutton:hover,
+  .projectcart:hover,
+  .signUpbutton:hover,
   .logOutbutton:hover,
   .orderbutton:hover {
     background-color: #f22000;
   }
-  
-  .footer p {
-    margin: 0;
-    font-size: 14px;
-    color: #555;
-  }
 
-  .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: #f5f5f5;
-    text-align: center;
+  text {
+    font-size: 14px;
+    font-weight: 100;
+    color: white;
+    font-style: inherit;
   }
-  
