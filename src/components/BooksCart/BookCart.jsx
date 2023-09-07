@@ -88,7 +88,7 @@ const BookCart = () => {
                     alt="Image not Available"
                     sx={{ objectFit: "contain", width: '150px' }} />
                 </div>
-                <div className='cardContent'>
+                <div className='cardContent' >
                   <CardContent class="cardcontent">
                     <label className='cardtitle'>
                         {cartBook.books.bookName}
@@ -100,12 +100,12 @@ const BookCart = () => {
 
                     <label className='cardtitle'>
                         Rs. {cartBook.totalPrice}
-                    </label><br />
+                    </label><br /> <br />
 
-                    <div className='countOfItems'>
-                      <button onClick={() => decreaseBookQty(cartBook.books.bookId)} disabled={cartBook.quantity === 1}> - </button>
+                    <div className='countOfItems'style={{ marginTop: '1px' }}  >
+                      <button onClick={() => decreaseBookQty(cartBook.books.bookId)} disabled={cartBook.quantity === 1}style={{ marginRight: '10px' }}> - </button>
                       <input  value={cartBook.quantity} className="count" type="text" name="countOfBook" id="Name" required />
-                      <button onClick={() => increaseBookQty(cartBook.books.bookId)}> + </button>
+                      <button onClick={() => increaseBookQty(cartBook.books.bookId)}style={{ marginLeft: '10px' }}> + </button>
                     </div>
                   </CardContent>
                 </div>

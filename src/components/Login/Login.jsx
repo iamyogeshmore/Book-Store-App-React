@@ -106,9 +106,13 @@ const Login = () => {
           <Grid item xs>
             <Link
               onClick={() => {
-                navigate("/ForgotPassword");
+                navigate("/Login");
               }}
               variant="body2"
+              sx={{
+                color: 'blue', // Change link color
+                cursor: 'pointer', // Show pointer on hover
+            }}
             >
               Forgot password?
             </Link>
@@ -119,6 +123,10 @@ const Login = () => {
                 navigate("/Signup");
               }}
               variant="body2"
+              sx={{
+                color: 'blue', // Change link color
+                cursor: 'pointer', // Show pointer on hover
+            }}
             >
               {"Don't have an account? Sign Up"}
             </Link>

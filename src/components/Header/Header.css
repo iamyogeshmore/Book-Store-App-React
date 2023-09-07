@@ -29,12 +29,11 @@
     margin-left: 10%;
     margin-right: 1%;
     margin-bottom: 1%;
-    animation: rotate 1s linear infinite; /* Adding rotating animation */
   }
 
   /* Project name styles */
   .projectname {
-    margin-right: 5%;
+    margin-right: 68%;
     cursor: pointer;
     color: white;
     transition: color 0.3s ease, transform 0.2s ease; /* Adding smooth transition */
@@ -46,6 +45,8 @@
   .signUpbutton,
   .logOutbutton,
   .orderbutton {
+    margin-right: 1%;
+
     background-color: transparent;
     border: none;
     color: white;
